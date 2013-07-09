@@ -29,7 +29,7 @@ module Romaji
 
       ROMAJI_MAX_LENGTH.downto(1) do |t|
         substr = chars.slice(pos, t).join
-        k = ROMAJI2KANA[substr]
+        k = (options[:force] ? ROMAJI2KANA_EXTRA : ROMAJI2KANA)[substr]
         if k
           kana += k
           pos += t
@@ -45,7 +45,7 @@ module Romaji
 
     kana_type = options[:kana_type] || :katakana
     kana = kata2hira(kana) if :hiragana == kana_type.to_sym
-      
+
     return kana
   end
 

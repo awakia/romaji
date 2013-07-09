@@ -9,6 +9,7 @@ describe Romaji do
       Romaji.romaji2kana('kyoumoshinaitone').should == 'キョウモシナイトネ'
       Romaji.romaji2kana('今日もshinaitone').should == '今日モシナイトネ'
       Romaji.romaji2kana('SushiNoTabetas').should == 'スシノタベタs'
+      Romaji.romaji2kana('SushiNoTabetas', force: true).should == 'スシノタベタス'
       Romaji.romaji2kana('shimbashi').should == 'シンバシ'
       Romaji.romaji2kana('kinkakuji').should == 'キンカクジ'
       Romaji.romaji2kana('tottori').should == 'トットリ'
