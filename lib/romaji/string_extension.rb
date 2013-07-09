@@ -10,12 +10,12 @@ module Romaji
       self.replace(self.normalize)
     end
 
-    def kana
-      Romaji.romaji2kana(self.normalize)
+    def kana(options = {})
+      Romaji.romaji2kana(self.normalize, options)
     end
 
-    def kana!
-      self.replace(self.kana)
+    def kana!(options = {})
+      self.replace(self.kana(options))
     end
 
     def romaji
