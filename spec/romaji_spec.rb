@@ -12,6 +12,11 @@ describe Romaji do
       Romaji.romaji2kana('shimbashi').should == 'シンバシ'
       Romaji.romaji2kana('kinkakuji').should == 'キンカクジ'
       Romaji.romaji2kana('tottori').should == 'トットリ'
+      Romaji.romaji2kana('anna').should == 'アンナ'
+      Romaji.romaji2kana('ana').should == 'アナ'
+      Romaji.romaji2kana('an-a').should == 'アンア'
+      Romaji.romaji2kana('ohno').should == 'オオノ'
+      Romaji.romaji2kana('nohmi').should == 'ノウミ'
       Romaji.romaji2kana('イイハナシダナー').should == 'イイハナシダナー'
     end
 
@@ -32,7 +37,7 @@ describe Romaji do
     Romaji.kana2romaji('デューク').should == 'dhu-ku'
     Romaji.kana2romaji('アツリョクナベ').should == 'atsuryokunabe'
   end
-  
+
   shared_examples_for 'String extension' do
     it 'should extend String#normalize' do
       @kana.normalize.should == 'スシ'
